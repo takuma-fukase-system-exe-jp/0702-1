@@ -1,10 +1,5 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-
 import { useCart } from "../cart/CartContext";
-
-
 import { useRouter } from "next/navigation";
 
 export default function ProductsPage() {
@@ -18,27 +13,16 @@ export default function ProductsPage() {
   const { addToCart } = useCart();
   const router = useRouter();
 
-  // 各商品の数量を管理
-  const [quantities, setQuantities] = React.useState<{ [id: number]: number }>({
-    1: 1,
-    2: 1,
-    3: 1,
-  });
-
   return (
     <main className="p-8">
       <h1 className="text-2xl font-bold mb-4">商品一覧</h1>
       <ul className="space-y-4">
         {products.map((p) => (
-          <li key={p.id} className="border p-4 rounded flex justify-between items-center">
-            <div>
-              <div className="font-semibold">{p.name}</div>
-              <div className="text-gray-500">¥{p.price.toLocaleString()}</div>
-              <div className="mt-2">
-              </div>
-            </div>
+          <li key={p.id} className="border p-4 rounded">
+            <div className="font-semibold">{p.name}</div>
+            <div className="text-gray-500">¥{p.price.toLocaleString()}</div>
             <button
-              className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+              className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
               onClick={() => {
                 addToCart({ ...p, quantity: 1 });
                 router.push("/cart");
@@ -49,9 +33,6 @@ export default function ProductsPage() {
           </li>
         ))}
       </ul>
-      <div className="mt-8">
-        <Link href="/cart" className="underline text-blue-600">カートを見る</Link>
-      </div>
     </main>
   );
 }

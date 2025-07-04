@@ -6,24 +6,19 @@ export default function Home() {
   return (
     <CartProvider>
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-4">麻辣湯通販サイト サンプル</h1>
-        <ul className="space-y-4">
-          <li>
-            <Link href="/products" className="underline text-blue-600 text-lg">
-              商品一覧ページへ
+        <h1 className="text-2xl font-bold mb-4">麻辣湯通販サイト</h1>
+        <div className="space-y-2">
+          <div>
+            <Link href="/products" className="text-blue-600 underline">
+              商品一覧
             </Link>
-          </li>
-          <li>
-            <Link href="/cart" className="underline text-blue-600 text-lg">
-              カートを見る
+          </div>
+          <div>
+            <Link href="/cart" className="text-blue-600 underline">
+              カート
             </Link>
-          </li>
-          <li>
-            <Link href="/order" className="underline text-blue-600 text-lg">
-              注文内容確認
-            </Link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </main>
     </CartProvider>
   );
