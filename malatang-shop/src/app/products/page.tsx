@@ -6,7 +6,7 @@ export default function ProductsPage() {
   // 仮の商品データ
   const products = [
     { id: 1, name: "麻辣湯セット", price: 1200 },
-    { id: 2, name: "トッピングの盛り合わせ（更新版）", price: 500 },
+    { id: 2, name: "トッピングの盛り合わせ", price: 500 },
     { id: 3, name: "追加スープ", price: 300 },
   ];
 
